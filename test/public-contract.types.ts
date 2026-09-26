@@ -1,7 +1,17 @@
 import { create } from "@bufbuild/protobuf";
 import {
   AppReleaseSchema,
+  blockLayer,
+  createQwibiAppDataClient,
   createQwibiClient,
+  createQwibiInvocationClient,
+  createQwibiMarkClient,
+  currentAppRelease,
+  listAllAppObjects,
+  putAppPicture,
+  sealRelease,
+  serveInvocations,
+  succeeded,
   GeoAppSchema,
   JoinPolicy,
   LayerListingIntent,
@@ -104,3 +114,22 @@ void client.listAppReleases({ page: { limit: 10, cursor: "", order: 1 } });
 
 // @ts-expect-error Asset lookup is solely by the exact content hash.
 void client.getReleaseAsset({ appId: release.appId, logicalName: "mutable-icon" });
+
+// W8-DEV-01a: the whole App loop through the published package.
+const appOptions = { baseUrl: "http://127.0.0.1:7903", token: "publish-key" };
+const appData = createQwibiAppDataClient(appOptions);
+void appData.putAppObjects({ appId: release.appId, objects: [], upsert: true });
+void appData.replaceAppObjects({ appId: release.appId, objects: [] });
+void appData.deleteAppObjects({ appId: release.appId, hids: ["gone"] });
+void appData.moveAppObjects({ appId: release.appId, moves: [] });
+void listAllAppObjects(appData, release.appId);
+void putAppPicture(appData, release.appId, new Uint8Array([0x89]));
+void sealRelease(release.appId, release).then(sealed => client.publishAppRelease(sealed));
+void currentAppRelease(client, release.appId);
+const invocations = createQwibiInvocationClient(appOptions);
+void serveInvocations(invocations, call => succeeded(call, { ok: true }), { signal: new AbortController().signal });
+void blockLayer(invocations, "opaque-key", "reason");
+const marks = createQwibiMarkClient(appOptions);
+void marks.setMark({ appId: release.appId, markId: "visited", objectId: release.appId, on: true });
+void marks.listMyMarks({ appId: release.appId });
+void marks.importMyMarks({ appId: release.appId, marks: [{ markId: "visited", objectId: release.appId }] });

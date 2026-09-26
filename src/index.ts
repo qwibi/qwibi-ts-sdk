@@ -3,9 +3,11 @@
 // Regenerate the gen/ tree with `pnpm generate` after a contract change.
 export * from "./gen/qwibi/v1/account_pb.js";
 export * from "./gen/qwibi/v1/app_pb.js";
+export * from "./gen/qwibi/v1/app_data_pb.js";
 export * from "./gen/qwibi/v1/app_release_pb.js";
 export * from "./gen/qwibi/v1/app_release_service_pb.js";
 export * from "./gen/qwibi/v1/app_installation_pb.js";
+export * from "./gen/qwibi/v1/app_member_pb.js";
 export * from "./gen/qwibi/v1/auth_pb.js";
 export * from "./gen/qwibi/v1/auth_options_pb.js";
 export * from "./gen/qwibi/v1/common_pb.js";
@@ -13,6 +15,7 @@ export * from "./gen/qwibi/v1/events_pb.js";
 export * from "./gen/qwibi/v1/geometry_pb.js";
 export * from "./gen/qwibi/v1/invocation_pb.js";
 export * from "./gen/qwibi/v1/layer_pb.js";
+export * from "./gen/qwibi/v1/mark_pb.js";
 export * from "./gen/qwibi/v1/media_pb.js";
 export * from "./gen/qwibi/v1/object_pb.js";
 export * from "./gen/qwibi/v1/organization_pb.js";
@@ -26,8 +29,9 @@ export * from "./gen/qwibi/stream/v1/stream_pb.js";
 
 // The protobuf-es message constructor and binary codec. The generated *Schema
 // symbols above are useless to a consumer without them: building an exact
-// AppRelease manifest goes through create(), and the release's canonical content
-// digest is SHA-256 over its deterministic binary projection, which is toBinary.
+// AppRelease manifest goes through create(). The release's canonical content
+// hash is not SHA-256 over toBinary (map order differs); use
+// releaseContentSha256 or sealRelease from ./release.js.
 export { create, toBinary } from "@bufbuild/protobuf";
 
 // Ergonomic geometry constructors (point, lineString, polygon, multi*, …).
@@ -44,6 +48,8 @@ export * from "./localization.js";
 export * from "./declarativeResult.js";
 export * from "./installation.js";
 export * from "./provenance.js";
+export * from "./release.js";
+export * from "./app.js";
 
 import { create } from "@bufbuild/protobuf";
 import { createClient, type Client } from "@connectrpc/connect";
@@ -354,6 +360,7 @@ function copyExactRelease(release: AppRelease): AppRelease {
     publishedAt: release.publishedAt,
     optionalExtensions: release.optionalExtensions,
     primaryActionId: release.primaryActionId,
+    marks: release.marks,
   });
 }
 

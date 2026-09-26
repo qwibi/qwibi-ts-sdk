@@ -25,6 +25,7 @@ describe("exact App release client", () => {
         logicalName: "icon",
       })],
       primaryActionId: "primary-action",
+      marks: [{ markId: "visited", objectType: "country", labelLocalizationKey: "mark.visited", showCount: true }],
     });
     const releaseBytes = toBinary(AppReleaseSchema, release);
     const readRelease = fromBinary(AppReleaseSchema, releaseBytes);

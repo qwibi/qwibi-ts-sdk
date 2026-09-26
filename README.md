@@ -28,6 +28,44 @@ and only the features that need a newly added sensitive right wait for each pers
 
 The generated client exposes one-call installation and a person's per-right consent operation.
 
+## A whole App
+
+One set of client options serves every part of an App; the helpers copy no server code and open
+no transport of their own.
+
+```ts
+import {
+  createQwibiAppDataClient, createQwibiClient, createQwibiInvocationClient,
+  currentAppRelease, failed, putAppPicture, sealRelease, serveInvocations, succeeded,
+} from "@qwibi/sdk";
+
+const opts = { baseUrl, token: publishKey };
+const release = await sealRelease(appId, draft);          // release id + canonical hash
+await createQwibiClient(opts).publishAppRelease(release);  // a repeat of the same version replays
+const current = await currentAppRelease(createQwibiClient(opts), appId);
+
+const data = createQwibiAppDataClient(opts);
+const picture = await putAppPicture(data, appId, pngBytes);
+await data.replaceAppObjects({ appId, objects });          // the whole data set, matched by hid
+
+await serveInvocations(createQwibiInvocationClient(opts), (call) =>
+  call.actionId === "visit" ? succeeded(call, { ok: true }) : failed(call, "Unknown action"),
+  { signal });
+```
+
+- `sealRelease`, `releaseContentSha256`, `releaseIdFor` — the canonical content hash is the
+  server's (Go deterministic encoding: fields by number, map keys in byte order); `toBinary` is
+  not canonical. `releaseIdFor` is the UUIDv5 of `<appId>/<version>`, the same id the Go SDK
+  derives, so republishing a version is a replay. `publishedAt` must be set and advance.
+- `currentAppRelease` — the latest publication by `publishedAt`, then release id, over every page.
+- `createQwibiAppDataClient`, `listAllAppObjects`, `putAppPicture` — the App's own data and
+  pictures (PNG, JPEG, GIF, WebP up to 4 MiB).
+- `serveInvocations` answers each delivery before the next, reopens an ended connection and
+  rejects when Qwibi refuses it; `succeeded`, `progress`, `failed`, `busy` and `validateAnswer`
+  refuse an answer Qwibi would refuse before it is sent. `blockLayer`, `blockCaller` and
+  `unblockSource` block by the opaque Layer key or the call id.
+- `createQwibiMarkClient` — a signed-in person's `setMark`, `listMyMarks` and `importMyMarks`.
+
 ## L1 object helpers
 
 The SDK constructs ordinary generated `ObjectWrite` messages for the five L1
