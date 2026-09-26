@@ -115,7 +115,7 @@ void client.listAppReleases({ page: { limit: 10, cursor: "", order: 1 } });
 // @ts-expect-error Asset lookup is solely by the exact content hash.
 void client.getReleaseAsset({ appId: release.appId, logicalName: "mutable-icon" });
 
-// W8-DEV-01a: the whole App loop through the published package.
+// The whole App loop through the published package.
 const appOptions = { baseUrl: "http://127.0.0.1:7903", token: "publish-key" };
 const appData = createQwibiAppDataClient(appOptions);
 void appData.putAppObjects({ appId: release.appId, objects: [], upsert: true });

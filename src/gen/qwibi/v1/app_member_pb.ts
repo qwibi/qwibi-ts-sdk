@@ -18,7 +18,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file qwibi/v1/app_member.proto.
  */
 export const file_qwibi_v1_app_member: GenFile = /*@__PURE__*/
-  fileDesc("Chlxd2liaS92MS9hcHBfbWVtYmVyLnByb3RvEghxd2liaS52MSKGAQoJQXBwTWVtYmVyEhwKCmFjY291bnRfaWQYASABKAlCCLpIBXIDsAEBEhQKDGRpc3BsYXlfbmFtZRgCIAEoCRIWCg5pbnZpdGVfbGlua19pZBgDIAEoCRItCglqb2luZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIqYCCg1BcHBJbnZpdGVMaW5rEhkKB2xpbmtfaWQYASABKAlCCLpIBXIDsAEBEhgKBmFwcF9pZBgCIAEoCUIIukgFcgOwAQESLgoKY3JlYXRlZF9hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKZXhwaXJlc19hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEAoIbWF4X3VzZXMYBSABKA0SEQoJdXNlX2NvdW50GAYgASgNEi4KCnJldm9rZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEisKBXN0YXRlGAggASgOMhwucXdpYmkudjEuQXBwSW52aXRlTGlua1N0YXRlIlYKFUxpc3RBcHBNZW1iZXJzUmVxdWVzdBIYCgZhcHBfaWQYASABKAlCCLpIBXIDsAEBEiMKBHBhZ2UYAiABKAsyFS5xd2liaS52MS5QYWdlUmVxdWVzdCJkChZMaXN0QXBwTWVtYmVyc1Jlc3BvbnNlEiQKB21lbWJlcnMYASADKAsyEy5xd2liaS52MS5BcHBNZW1iZXISJAoEcGFnZRgCIAEoCzIWLnF3aWJpLnYxLlBhZ2VSZXNwb25zZSKDAQoaQ3JlYXRlQXBwSW52aXRlTGlua1JlcXVlc3QSGAoGYXBwX2lkGAEgASgJQgi6SAVyA7ABARIuCgpleHBpcmVzX2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIbCghtYXhfdXNlcxgDIAEoDUIJukgGKgQYoI0GIloKG0NyZWF0ZUFwcEludml0ZUxpbmtSZXNwb25zZRIlCgRsaW5rGAEgASgLMhcucXdpYmkudjEuQXBwSW52aXRlTGluaxIUCgxpbnZpdGVfdG9rZW4YAiABKAkiNQoZTGlzdEFwcEludml0ZUxpbmtzUmVxdWVzdBIYCgZhcHBfaWQYASABKAlCCLpIBXIDsAEBIkQKGkxpc3RBcHBJbnZpdGVMaW5rc1Jlc3BvbnNlEiYKBWxpbmtzGAEgAygLMhcucXdpYmkudjEuQXBwSW52aXRlTGluayJRChpSZXZva2VBcHBJbnZpdGVMaW5rUmVxdWVzdBIYCgZhcHBfaWQYASABKAlCCLpIBXIDsAEBEhkKB2xpbmtfaWQYAiABKAlCCLpIBXIDsAEBIkQKG1Jldm9rZUFwcEludml0ZUxpbmtSZXNwb25zZRIlCgRsaW5rGAEgASgLMhcucXdpYmkudjEuQXBwSW52aXRlTGluayJQChZSZW1vdmVBcHBNZW1iZXJSZXF1ZXN0EhgKBmFwcF9pZBgBIAEoCUIIukgFcgOwAQESHAoKYWNjb3VudF9pZBgCIAEoCUIIukgFcgOwAQEiGQoXUmVtb3ZlQXBwTWVtYmVyUmVzcG9uc2UiMgoOSm9pbkFwcFJlcXVlc3QSIAoMaW52aXRlX3Rva2VuGAEgASgJQgq6SAdyBRABGIACIjAKD0pvaW5BcHBSZXNwb25zZRIdCgNhcHAYASABKAsyEC5xd2liaS52MS5HZW9BcHAqyAEKEkFwcEludml0ZUxpbmtTdGF0ZRIlCiFBUFBfSU5WSVRFX0xJTktfU1RBVEVfVU5TUEVDSUZJRUQQABIgChxBUFBfSU5WSVRFX0xJTktfU1RBVEVfQUNUSVZFEAESIQodQVBQX0lOVklURV9MSU5LX1NUQVRFX0VYUElSRUQQAhIjCh9BUFBfSU5WSVRFX0xJTktfU1RBVEVfRVhIQVVTVEVEEAMSIQodQVBQX0lOVklURV9MSU5LX1NUQVRFX1JFVk9LRUQQBDLMBAoQQXBwTWVtYmVyU2VydmljZRJZCg5MaXN0QXBwTWVtYmVycxIfLnF3aWJpLnYxLkxpc3RBcHBNZW1iZXJzUmVxdWVzdBogLnF3aWJpLnYxLkxpc3RBcHBNZW1iZXJzUmVzcG9uc2UiBIi1GAMSaAoTQ3JlYXRlQXBwSW52aXRlTGluaxIkLnF3aWJpLnYxLkNyZWF0ZUFwcEludml0ZUxpbmtSZXF1ZXN0GiUucXdpYmkudjEuQ3JlYXRlQXBwSW52aXRlTGlua1Jlc3BvbnNlIgSItRgDEmUKEkxpc3RBcHBJbnZpdGVMaW5rcxIjLnF3aWJpLnYxLkxpc3RBcHBJbnZpdGVMaW5rc1JlcXVlc3QaJC5xd2liaS52MS5MaXN0QXBwSW52aXRlTGlua3NSZXNwb25zZSIEiLUYAxJoChNSZXZva2VBcHBJbnZpdGVMaW5rEiQucXdpYmkudjEuUmV2b2tlQXBwSW52aXRlTGlua1JlcXVlc3QaJS5xd2liaS52MS5SZXZva2VBcHBJbnZpdGVMaW5rUmVzcG9uc2UiBIi1GAMSXAoPUmVtb3ZlQXBwTWVtYmVyEiAucXdpYmkudjEuUmVtb3ZlQXBwTWVtYmVyUmVxdWVzdBohLnF3aWJpLnYxLlJlbW92ZUFwcE1lbWJlclJlc3BvbnNlIgSItRgDEkQKB0pvaW5BcHASGC5xd2liaS52MS5Kb2luQXBwUmVxdWVzdBoZLnF3aWJpLnYxLkpvaW5BcHBSZXNwb25zZSIEiLUYA0IyWjBnaXRodWIuY29tL3F3aWJpL3F3aWJpLXByb3RvLWdvL3F3aWJpL3YxO3F3aWJpdjFiBnByb3RvMw", [file_buf_validate_validate, file_google_protobuf_timestamp, file_qwibi_v1_app, file_qwibi_v1_auth_options, file_qwibi_v1_common]);
+  fileDesc("Chlxd2liaS92MS9hcHBfbWVtYmVyLnByb3RvEghxd2liaS52MSKXAQoJQXBwTWVtYmVyEhwKCmFjY291bnRfaWQYASABKAlCCLpIBXIDsAEBEhQKDGRpc3BsYXlfbmFtZRgCIAEoCRIWCg5pbnZpdGVfbGlua19pZBgDIAEoCRItCglqb2luZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEg8KB3JvbGVfaWQYBSABKAkipgIKDUFwcEludml0ZUxpbmsSGQoHbGlua19pZBgBIAEoCUIIukgFcgOwAQESGAoGYXBwX2lkGAIgASgJQgi6SAVyA7ABARIuCgpjcmVhdGVkX2F0GAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIuCgpleHBpcmVzX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIQCghtYXhfdXNlcxgFIAEoDRIRCgl1c2VfY291bnQYBiABKA0SLgoKcmV2b2tlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASKwoFc3RhdGUYCCABKA4yHC5xd2liaS52MS5BcHBJbnZpdGVMaW5rU3RhdGUiVgoVTGlzdEFwcE1lbWJlcnNSZXF1ZXN0EhgKBmFwcF9pZBgBIAEoCUIIukgFcgOwAQESIwoEcGFnZRgCIAEoCzIVLnF3aWJpLnYxLlBhZ2VSZXF1ZXN0ImQKFkxpc3RBcHBNZW1iZXJzUmVzcG9uc2USJAoHbWVtYmVycxgBIAMoCzITLnF3aWJpLnYxLkFwcE1lbWJlchIkCgRwYWdlGAIgASgLMhYucXdpYmkudjEuUGFnZVJlc3BvbnNlIoMBChpDcmVhdGVBcHBJbnZpdGVMaW5rUmVxdWVzdBIYCgZhcHBfaWQYASABKAlCCLpIBXIDsAEBEi4KCmV4cGlyZXNfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhsKCG1heF91c2VzGAMgASgNQgm6SAYqBBigjQYiWgobQ3JlYXRlQXBwSW52aXRlTGlua1Jlc3BvbnNlEiUKBGxpbmsYASABKAsyFy5xd2liaS52MS5BcHBJbnZpdGVMaW5rEhQKDGludml0ZV90b2tlbhgCIAEoCSI1ChlMaXN0QXBwSW52aXRlTGlua3NSZXF1ZXN0EhgKBmFwcF9pZBgBIAEoCUIIukgFcgOwAQEiRAoaTGlzdEFwcEludml0ZUxpbmtzUmVzcG9uc2USJgoFbGlua3MYASADKAsyFy5xd2liaS52MS5BcHBJbnZpdGVMaW5rIlEKGlJldm9rZUFwcEludml0ZUxpbmtSZXF1ZXN0EhgKBmFwcF9pZBgBIAEoCUIIukgFcgOwAQESGQoHbGlua19pZBgCIAEoCUIIukgFcgOwAQEiRAobUmV2b2tlQXBwSW52aXRlTGlua1Jlc3BvbnNlEiUKBGxpbmsYASABKAsyFy5xd2liaS52MS5BcHBJbnZpdGVMaW5rIocBChdTZXRBcHBNZW1iZXJSb2xlUmVxdWVzdBIYCgZhcHBfaWQYASABKAlCCLpIBXIDsAEBEhwKCmFjY291bnRfaWQYAiABKAlCCLpIBXIDsAEBEjQKB3JvbGVfaWQYAyABKAlCI7pIIHIeGEAyGl4kfF5bYS16XVthLXowLTlfLV17MCw2M30kIj8KGFNldEFwcE1lbWJlclJvbGVSZXNwb25zZRIjCgZtZW1iZXIYASABKAsyEy5xd2liaS52MS5BcHBNZW1iZXIiUAoWUmVtb3ZlQXBwTWVtYmVyUmVxdWVzdBIYCgZhcHBfaWQYASABKAlCCLpIBXIDsAEBEhwKCmFjY291bnRfaWQYAiABKAlCCLpIBXIDsAEBIhkKF1JlbW92ZUFwcE1lbWJlclJlc3BvbnNlIjIKDkpvaW5BcHBSZXF1ZXN0EiAKDGludml0ZV90b2tlbhgBIAEoCUIKukgHcgUQARiAAiIwCg9Kb2luQXBwUmVzcG9uc2USHQoDYXBwGAEgASgLMhAucXdpYmkudjEuR2VvQXBwKsgBChJBcHBJbnZpdGVMaW5rU3RhdGUSJQohQVBQX0lOVklURV9MSU5LX1NUQVRFX1VOU1BFQ0lGSUVEEAASIAocQVBQX0lOVklURV9MSU5LX1NUQVRFX0FDVElWRRABEiEKHUFQUF9JTlZJVEVfTElOS19TVEFURV9FWFBJUkVEEAISIwofQVBQX0lOVklURV9MSU5LX1NUQVRFX0VYSEFVU1RFRBADEiEKHUFQUF9JTlZJVEVfTElOS19TVEFURV9SRVZPS0VEEAQyrQUKEEFwcE1lbWJlclNlcnZpY2USWQoOTGlzdEFwcE1lbWJlcnMSHy5xd2liaS52MS5MaXN0QXBwTWVtYmVyc1JlcXVlc3QaIC5xd2liaS52MS5MaXN0QXBwTWVtYmVyc1Jlc3BvbnNlIgSItRgDEmgKE0NyZWF0ZUFwcEludml0ZUxpbmsSJC5xd2liaS52MS5DcmVhdGVBcHBJbnZpdGVMaW5rUmVxdWVzdBolLnF3aWJpLnYxLkNyZWF0ZUFwcEludml0ZUxpbmtSZXNwb25zZSIEiLUYAxJlChJMaXN0QXBwSW52aXRlTGlua3MSIy5xd2liaS52MS5MaXN0QXBwSW52aXRlTGlua3NSZXF1ZXN0GiQucXdpYmkudjEuTGlzdEFwcEludml0ZUxpbmtzUmVzcG9uc2UiBIi1GAMSaAoTUmV2b2tlQXBwSW52aXRlTGluaxIkLnF3aWJpLnYxLlJldm9rZUFwcEludml0ZUxpbmtSZXF1ZXN0GiUucXdpYmkudjEuUmV2b2tlQXBwSW52aXRlTGlua1Jlc3BvbnNlIgSItRgDEl8KEFNldEFwcE1lbWJlclJvbGUSIS5xd2liaS52MS5TZXRBcHBNZW1iZXJSb2xlUmVxdWVzdBoiLnF3aWJpLnYxLlNldEFwcE1lbWJlclJvbGVSZXNwb25zZSIEiLUYAxJcCg9SZW1vdmVBcHBNZW1iZXISIC5xd2liaS52MS5SZW1vdmVBcHBNZW1iZXJSZXF1ZXN0GiEucXdpYmkudjEuUmVtb3ZlQXBwTWVtYmVyUmVzcG9uc2UiBIi1GAMSRAoHSm9pbkFwcBIYLnF3aWJpLnYxLkpvaW5BcHBSZXF1ZXN0GhkucXdpYmkudjEuSm9pbkFwcFJlc3BvbnNlIgSItRgDQjJaMGdpdGh1Yi5jb20vcXdpYmkvcXdpYmktcHJvdG8tZ28vcXdpYmkvdjE7cXdpYml2MWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp, file_qwibi_v1_app, file_qwibi_v1_auth_options, file_qwibi_v1_common]);
 
 /**
  * AppMember is one person who may use a private App.
@@ -48,6 +48,14 @@ export type AppMember = Message<"qwibi.v1.AppMember"> & {
    * @generated from field: google.protobuf.Timestamp joined_at = 4;
    */
   joinedAt?: Timestamp | undefined;
+
+  /**
+   * The member role the member holds, one of the current release's
+   * member_roles, or empty for none.
+   *
+   * @generated from field: string role_id = 5;
+   */
+  roleId: string;
 };
 
 /**
@@ -289,6 +297,52 @@ export const RevokeAppInviteLinkResponseSchema: GenMessage<RevokeAppInviteLinkRe
   messageDesc(file_qwibi_v1_app_member, 9);
 
 /**
+ * @generated from message qwibi.v1.SetAppMemberRoleRequest
+ */
+export type SetAppMemberRoleRequest = Message<"qwibi.v1.SetAppMemberRoleRequest"> & {
+  /**
+   * @generated from field: string app_id = 1;
+   */
+  appId: string;
+
+  /**
+   * @generated from field: string account_id = 2;
+   */
+  accountId: string;
+
+  /**
+   * A role the current release declares, or empty to take the role away.
+   *
+   * @generated from field: string role_id = 3;
+   */
+  roleId: string;
+};
+
+/**
+ * Describes the message qwibi.v1.SetAppMemberRoleRequest.
+ * Use `create(SetAppMemberRoleRequestSchema)` to create a new message.
+ */
+export const SetAppMemberRoleRequestSchema: GenMessage<SetAppMemberRoleRequest> = /*@__PURE__*/
+  messageDesc(file_qwibi_v1_app_member, 10);
+
+/**
+ * @generated from message qwibi.v1.SetAppMemberRoleResponse
+ */
+export type SetAppMemberRoleResponse = Message<"qwibi.v1.SetAppMemberRoleResponse"> & {
+  /**
+   * @generated from field: qwibi.v1.AppMember member = 1;
+   */
+  member?: AppMember | undefined;
+};
+
+/**
+ * Describes the message qwibi.v1.SetAppMemberRoleResponse.
+ * Use `create(SetAppMemberRoleResponseSchema)` to create a new message.
+ */
+export const SetAppMemberRoleResponseSchema: GenMessage<SetAppMemberRoleResponse> = /*@__PURE__*/
+  messageDesc(file_qwibi_v1_app_member, 11);
+
+/**
  * @generated from message qwibi.v1.RemoveAppMemberRequest
  */
 export type RemoveAppMemberRequest = Message<"qwibi.v1.RemoveAppMemberRequest"> & {
@@ -308,7 +362,7 @@ export type RemoveAppMemberRequest = Message<"qwibi.v1.RemoveAppMemberRequest"> 
  * Use `create(RemoveAppMemberRequestSchema)` to create a new message.
  */
 export const RemoveAppMemberRequestSchema: GenMessage<RemoveAppMemberRequest> = /*@__PURE__*/
-  messageDesc(file_qwibi_v1_app_member, 10);
+  messageDesc(file_qwibi_v1_app_member, 12);
 
 /**
  * @generated from message qwibi.v1.RemoveAppMemberResponse
@@ -321,7 +375,7 @@ export type RemoveAppMemberResponse = Message<"qwibi.v1.RemoveAppMemberResponse"
  * Use `create(RemoveAppMemberResponseSchema)` to create a new message.
  */
 export const RemoveAppMemberResponseSchema: GenMessage<RemoveAppMemberResponse> = /*@__PURE__*/
-  messageDesc(file_qwibi_v1_app_member, 11);
+  messageDesc(file_qwibi_v1_app_member, 13);
 
 /**
  * @generated from message qwibi.v1.JoinAppRequest
@@ -338,7 +392,7 @@ export type JoinAppRequest = Message<"qwibi.v1.JoinAppRequest"> & {
  * Use `create(JoinAppRequestSchema)` to create a new message.
  */
 export const JoinAppRequestSchema: GenMessage<JoinAppRequest> = /*@__PURE__*/
-  messageDesc(file_qwibi_v1_app_member, 12);
+  messageDesc(file_qwibi_v1_app_member, 14);
 
 /**
  * @generated from message qwibi.v1.JoinAppResponse
@@ -355,7 +409,7 @@ export type JoinAppResponse = Message<"qwibi.v1.JoinAppResponse"> & {
  * Use `create(JoinAppResponseSchema)` to create a new message.
  */
 export const JoinAppResponseSchema: GenMessage<JoinAppResponse> = /*@__PURE__*/
-  messageDesc(file_qwibi_v1_app_member, 13);
+  messageDesc(file_qwibi_v1_app_member, 15);
 
 /**
  * @generated from enum qwibi.v1.AppInviteLinkState
@@ -436,7 +490,19 @@ export const AppMemberService: GenService<{
     output: typeof RevokeAppInviteLinkResponseSchema;
   },
   /**
-   * Removing a member closes their open streams of the App's data.
+   * Changing a member's role closes their open streams of the App's data; a
+   * role grants reading only.
+   *
+   * @generated from rpc qwibi.v1.AppMemberService.SetAppMemberRole
+   */
+  setAppMemberRole: {
+    methodKind: "unary";
+    input: typeof SetAppMemberRoleRequestSchema;
+    output: typeof SetAppMemberRoleResponseSchema;
+  },
+  /**
+   * Removing a member closes their open streams of the App's data, ends their
+   * open calls and withholds their kept answers.
    *
    * @generated from rpc qwibi.v1.AppMemberService.RemoveAppMember
    */

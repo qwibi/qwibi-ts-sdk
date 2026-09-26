@@ -114,8 +114,8 @@ export interface AppReleaseLister {
 /**
  * currentAppRelease returns the App's current release: the latest publication
  * by publication time and then release id, as Qwibi orders every new
- * publication (ADR-0032: publishing a release makes it current in every
- * installation at once). It walks every page and returns undefined when the
+ * publication (publishing a release makes it current in every installation
+ * at once). It walks every page and returns undefined when the
  * App has no release.
  */
 export async function currentAppRelease(client: AppReleaseLister, appId: string): Promise<AppRelease | undefined> {

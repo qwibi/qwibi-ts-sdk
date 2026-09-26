@@ -5,25 +5,61 @@ TypeScript/browser client for the `qwibi.v1` contract — the web mirror of
 with protobuf-es v2; clients are built with Connect-Web.
 
 ```ts
-import { createQwibiClient } from "@qwibi/sdk";
+import { createQwibiClient, signInAnonymously } from "@qwibi/sdk";
 
-const qwibi = createQwibiClient({ baseUrl: "http://localhost:7903" });
-const res = await qwibi.authenticate({
-  credential: { method: { case: "anonymous", value: { deviceId: "web-demo" } } },
-});
+const baseUrl = "http://localhost:7903";
+let accessToken: string | undefined;
+const qwibi = createQwibiClient({ baseUrl, token: () => accessToken });
+const { session, account } = await signInAnonymously(qwibi, { deviceId: "web-demo-0001" });
+accessToken = session.accessToken;
 ```
 
 The gateway exposes the browser **gRPC-Web edge** on `:7903`; api-server `:7901` is
 health/metrics HTTP only. Unary RPCs and server-streaming (`StreamLayer` — the live-layer
 subscription) are supported; only bidirectional `Subscribe` is unavailable over gRPC-Web.
 
+## Anonymous sign-in
+
+`signInAnonymously(client, { deviceId, humanCheckToken })` sends the same request the Qwibi
+web app sends and returns `{ session, account }`.
+
+- **Device id.** Generate it once (a random UUID is fine), persist it and reuse it: the same
+  device id resumes the same anonymous account. 8 to 256 characters.
+- **Human-check token.** Needed only when the device id is new to a server that runs the human
+  check. It comes from the invisible Cloudflare Turnstile widget rendered with that server's
+  public site key (`action: "anonymous-sign-in"`, executed once per sign-in). The server accepts
+  it only if Cloudflare issued it on one of the site hostnames it is configured for, so it
+  works from pages served there. Tokens are single-use: get a fresh one for every attempt. A
+  server without the human check (local development) ignores it.
+- **Session.** Hand the access token to `createQwibiClient` through the `token` getter. Keep the
+  refresh token and rotate it with `refreshSession(client, refreshToken)`; persist the new refresh
+  token before using the new access token, because the old one is spent.
+- **Refusals** are thrown as `AnonymousSignInError` with `reason`:
+  `"human-check-failed"` (token missing, refused or for another site), `"rate-limited"` (too many
+  new accounts from this address; `retryAfterMs` carries the server's hint), `"unavailable"`
+  (provider, limiter or network; retry with backoff and a fresh token), `"invalid-request"`, or
+  `"refused"`. `cause` is the original `ConnectError`.
+
+```ts
+try {
+  await signInAnonymously(qwibi, { deviceId, humanCheckToken });
+} catch (err) {
+  if (err instanceof AnonymousSignInError && err.reason === "rate-limited") {
+    // wait err.retryAfterMs, then try again with a new token
+  }
+}
+```
+
+**Programs without a browser** cannot produce a token and should not create anonymous accounts:
+those are for people on their own devices. An App authenticates with its publish key or App token
+(see below), automation with an organization access key, and a script acting for a person with
+that person's account (password or email link). There is no client-side way around the check.
+
 ## Installations and releases
 
-An App's process never lists, follows or acknowledges installations
-([ADR-0032](../qwibi-docs/adr/0032-installation-blind-app-delivery.md)). Publishing a release makes it
+An App's process never lists, follows or acknowledges installations. Publishing a release makes it
 current in every installation at once; there is no pending release, readiness report or promotion,
-and only the features that need a newly added sensitive right wait for each person's consent
-([PRODUCT §3.4](../qwibi-docs/PRODUCT.md#34-apprelease), [§9.4](../qwibi-docs/PRODUCT.md#94-installation)).
+and only the features that need a newly added sensitive right wait for each person's consent.
 `createQwibiInstallationClient` serves the people who add Apps to Layers and remove them.
 
 The generated client exposes one-call installation and a person's per-right consent operation.
@@ -86,8 +122,7 @@ any other `object_type` directly on an `ObjectWrite`.
 
 ## Client conformance
 
-Any consumer of the live stream (`StreamLayer`) must follow the QTProtocol
-client-conformance rules (`qwibi-docs/design/qtprotocol-spec.md` §6.1):
+Any consumer of the live stream (`StreamLayer`) must follow these client-conformance rules:
 
 1. **`SLOW_CONSUMER` ⇒ drop the cursor, re-open.** The server dropped deltas under
    backpressure — the view is stale. Discard the resume cursor and re-open the
@@ -144,9 +179,9 @@ await writer.publishPrepared(createStreamIngressClient({ baseUrl, token }), fram
 ## Develop
 
 ```sh
-pnpm install            # from the repo root (pnpm workspace)
-pnpm --filter @qwibi/sdk generate   # regenerate proto bindings
-pnpm --filter @qwibi/sdk build      # tsc -> dist
+npm install
+npm run build        # tsc -> dist
+npm test
 ```
 
-Regenerate `src/gen` after any change to `qwibi-api-proto`.
+`src/gen` is generated from the `qwibi.v1` protobuf contract and committed with the package.

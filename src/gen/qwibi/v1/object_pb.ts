@@ -19,7 +19,7 @@ import type { JsonObject, Message } from "@bufbuild/protobuf";
  * Describes the file qwibi/v1/object.proto.
  */
 export const file_qwibi_v1_object: GenFile = /*@__PURE__*/
-  fileDesc("ChVxd2liaS92MS9vYmplY3QucHJvdG8SCHF3aWJpLnYxItUBCgdGZWF0dXJlElUKA3VpZBgBIAEoCUJIukhFckMyQV4kfF5bMC05YS1mXXs4fS1bMC05YS1mXXs0fS1bMC05YS1mXXs0fS1bMC05YS1mXXs0fS1bMC05YS1mXXsxMn0kEiwKCGdlb21ldHJ5GAIgASgLMhIucXdpYmkudjEuR2VvbWV0cnlCBrpIA8gBARIrCgpwcm9wZXJ0aWVzGAMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdBIYCgVzdHlsZRgEIAEoCUIJukgGcgQYgIABItAKCglHZW9PYmplY3QSVQoDdWlkGAEgASgJQki6SEVyQzI+XlswLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfSSYASQSWgoIbGF5ZXJfaWQYAiABKAlCSLpIRXJDMj5eWzAtOWEtZl17OH0tWzAtOWEtZl17NH0tWzAtOWEtZl17NH0tWzAtOWEtZl17NH0tWzAtOWEtZl17MTJ9JJgBJBIsCghnZW9tZXRyeRgEIAEoCzISLnF3aWJpLnYxLkdlb21ldHJ5Qga6SAPIAQESIwoIZmVhdHVyZXMYBSADKAsyES5xd2liaS52MS5GZWF0dXJlEisKCnByb3BlcnRpZXMYBiABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0EhwKC29iamVjdF90eXBlGAcgASgJQge6SARyAhhAEhkKCGNhdGVnb3J5GAggASgJQge6SARyAhhAEhAKCHByaW9yaXR5GAkgASgFEhUKDWlzX3NlbGVjdGFibGUYCiABKAgSEgoKaXNfdmlzaWJsZRgLIAEoCBIYCgVzdHlsZRgMIAEoCUIJukgGcgQYgIABEi4KCmNyZWF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCnVwZGF0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEg8KB3ZlcnNpb24YDyABKAQSWwoJcGFyZW50X2lkGBAgASgJQki6SEVyQzJBXiR8XlswLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfSQSLQoDaGlkGBEgASgJQiC6SB1yGzIZXlthLXowLTldW2EtejAtOS1dezEsNjJ9JBIWCgRuYW1lGBIgASgJQgi6SAVyAxiAAhIlCgVndHlwZRgTIAEoDjIWLnF3aWJpLnYxLkdlb21ldHJ5VHlwZRIuCgpleHBpcmVzX2F0GBQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwChBwb3NpdGlvbl92ZXJzaW9uGBYgASgLMhYucXdpYmkudjEuU3RhdGVWZXJzaW9uEioKCGF1ZGllbmNlGBcgASgOMhgucXdpYmkudjEuT2JqZWN0QXVkaWVuY2USFAoMYXVkaWVuY2VfaWRzGBggAygJEjAKCnByb3ZlbmFuY2UYGSABKAsyFC5xd2liaS52MS5Qcm92ZW5hbmNlQga6SAPIAQESfQoObGF5ZXJfYmxvYl9pZHMYGiADKAlCZbpIYpIBXxBAGAEiWXJXMlJeWzAtOWEtZl17OH0tWzAtOWEtZl17NH0tN1swLTlhLWZdezN9LVs4OWFiXVswLTlhLWZdezN9LVswLTlhLWZdezEyfS1bMC05YS1mXXszMn0kmAFFOs8BukjLARrIAQoSZ2VvX29iamVjdC5jcmVhdG9yEk5jcmVhdG9yX3ByaW5jaXBhbF9pZCBtYXkgYmUgYWJzZW50IG9ubHkgZm9yIGEgcGxhdGZvcm0tcHJvZHVjZWQgZHVyYWJsZSByZWNvcmQaYnRoaXMucHJvdmVuYW5jZS5wcm9kdWNlci5wcm9kdWNlcl9raW5kID09IDIgfHwgdGhpcy5wcm92ZW5hbmNlLnByb2R1Y2VyLmNyZWF0b3JfcHJpbmNpcGFsX2lkICE9ICcnSgQIAxAESgQIFRAWUglhdXRob3JfaWRSBnJlc3VsdCKzBgoLT2JqZWN0V3JpdGUSLAoIZ2VvbWV0cnkYASABKAsyEi5xd2liaS52MS5HZW9tZXRyeUIGukgDyAEBEiMKCGZlYXR1cmVzGAIgAygLMhEucXdpYmkudjEuRmVhdHVyZRIrCgpwcm9wZXJ0aWVzGAMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdBIcCgtvYmplY3RfdHlwZRgEIAEoCUIHukgEcgIYQBIZCghjYXRlZ29yeRgFIAEoCUIHukgEcgIYQBIQCghwcmlvcml0eRgGIAEoBRIaCg1pc19zZWxlY3RhYmxlGAcgASgISACIAQESFwoKaXNfdmlzaWJsZRgIIAEoCEgBiAEBEhgKBXN0eWxlGAkgASgJQgm6SAZyBBiAgAESWwoJcGFyZW50X2lkGAogASgJQki6SEVyQzJBXiR8XlswLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfSQSMAoDaGlkGAsgASgJQiO6SCDIAQFyGzIZXlthLXowLTldW2EtejAtOS1dezEsNjJ9JBIWCgRuYW1lGAwgASgJQgi6SAVyAxiAAhITCgt0dGxfc2Vjb25kcxgNIAEoDRIvCghhdWRpZW5jZRgPIAEoDjIYLnF3aWJpLnYxLk9iamVjdEF1ZGllbmNlSAKIAQESYgoMYXVkaWVuY2VfaWRzGBAgAygJQky6SEmSAUYQECJCckAyPl5bMC05YS1mXXs4fS1bMC05YS1mXXs0fS1bMC05YS1mXXs0fS1bMC05YS1mXXs0fS1bMC05YS1mXXsxMn0kEn0KDmxheWVyX2Jsb2JfaWRzGBEgAygJQmW6SGKSAV8QQBgBIllyVzJSXlswLTlhLWZdezh9LVswLTlhLWZdezR9LTdbMC05YS1mXXszfS1bODlhYl1bMC05YS1mXXszfS1bMC05YS1mXXsxMn0tWzAtOWEtZl17MzJ9JJgBRUIQCg5faXNfc2VsZWN0YWJsZUINCgtfaXNfdmlzaWJsZUILCglfYXVkaWVuY2VKBAgOEA9SBnJlc3VsdCqfAQoOT2JqZWN0QXVkaWVuY2USHwobT0JKRUNUX0FVRElFTkNFX1VOU1BFQ0lGSUVEEAASGgoWT0JKRUNUX0FVRElFTkNFX1BVQkxJQxABEhoKFk9CSkVDVF9BVURJRU5DRV9BVVRIT1IQAhIaChZPQkpFQ1RfQVVESUVOQ0VfRElSRUNUEAMSGAoUT0JKRUNUX0FVRElFTkNFX1JPTEUQBEIyWjBnaXRodWIuY29tL3F3aWJpL3F3aWJpLXByb3RvLWdvL3F3aWJpL3YxO3F3aWJpdjFiBnByb3RvMw", [file_buf_validate_validate, file_qwibi_v1_common, file_qwibi_v1_geometry, file_qwibi_v1_provenance, file_google_protobuf_struct, file_google_protobuf_timestamp]);
+  fileDesc("ChVxd2liaS92MS9vYmplY3QucHJvdG8SCHF3aWJpLnYxItUBCgdGZWF0dXJlElUKA3VpZBgBIAEoCUJIukhFckMyQV4kfF5bMC05YS1mXXs4fS1bMC05YS1mXXs0fS1bMC05YS1mXXs0fS1bMC05YS1mXXs0fS1bMC05YS1mXXsxMn0kEiwKCGdlb21ldHJ5GAIgASgLMhIucXdpYmkudjEuR2VvbWV0cnlCBrpIA8gBARIrCgpwcm9wZXJ0aWVzGAMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdBIYCgVzdHlsZRgEIAEoCUIJukgGcgQYgIABIpELCglHZW9PYmplY3QSVQoDdWlkGAEgASgJQki6SEVyQzI+XlswLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfSSYASQSWgoIbGF5ZXJfaWQYAiABKAlCSLpIRXJDMj5eWzAtOWEtZl17OH0tWzAtOWEtZl17NH0tWzAtOWEtZl17NH0tWzAtOWEtZl17NH0tWzAtOWEtZl17MTJ9JJgBJBIsCghnZW9tZXRyeRgEIAEoCzISLnF3aWJpLnYxLkdlb21ldHJ5Qga6SAPIAQESIwoIZmVhdHVyZXMYBSADKAsyES5xd2liaS52MS5GZWF0dXJlEisKCnByb3BlcnRpZXMYBiABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0EhwKC29iamVjdF90eXBlGAcgASgJQge6SARyAhhAEhkKCGNhdGVnb3J5GAggASgJQge6SARyAhhAEhAKCHByaW9yaXR5GAkgASgFEhUKDWlzX3NlbGVjdGFibGUYCiABKAgSEgoKaXNfdmlzaWJsZRgLIAEoCBIYCgVzdHlsZRgMIAEoCUIJukgGcgQYgIABEi4KCmNyZWF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCnVwZGF0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEg8KB3ZlcnNpb24YDyABKAQSWwoJcGFyZW50X2lkGBAgASgJQki6SEVyQzJBXiR8XlswLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfSQSLQoDaGlkGBEgASgJQiC6SB1yGzIZXlthLXowLTldW2EtejAtOS1dezEsNjJ9JBIWCgRuYW1lGBIgASgJQgi6SAVyAxiAAhIlCgVndHlwZRgTIAEoDjIWLnF3aWJpLnYxLkdlb21ldHJ5VHlwZRIuCgpleHBpcmVzX2F0GBQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwChBwb3NpdGlvbl92ZXJzaW9uGBYgASgLMhYucXdpYmkudjEuU3RhdGVWZXJzaW9uEioKCGF1ZGllbmNlGBcgASgOMhgucXdpYmkudjEuT2JqZWN0QXVkaWVuY2USFAoMYXVkaWVuY2VfaWRzGBggAygJEjAKCnByb3ZlbmFuY2UYGSABKAsyFC5xd2liaS52MS5Qcm92ZW5hbmNlQga6SAPIAQESfQoObGF5ZXJfYmxvYl9pZHMYGiADKAlCZbpIYpIBXxBAGAEiWXJXMlJeWzAtOWEtZl17OH0tWzAtOWEtZl17NH0tN1swLTlhLWZdezN9LVs4OWFiXVswLTlhLWZdezN9LVswLTlhLWZdezEyfS1bMC05YS1mXXszMn0kmAFFEj8KDmF1ZGllbmNlX3JvbGVzGBsgAygJQie6SCSSASEQEBgBIhtyGTIXXlthLXpdW2EtejAtOV8tXXswLDYzfSQ6zwG6SMsBGsgBChJnZW9fb2JqZWN0LmNyZWF0b3ISTmNyZWF0b3JfcHJpbmNpcGFsX2lkIG1heSBiZSBhYnNlbnQgb25seSBmb3IgYSBwbGF0Zm9ybS1wcm9kdWNlZCBkdXJhYmxlIHJlY29yZBpidGhpcy5wcm92ZW5hbmNlLnByb2R1Y2VyLnByb2R1Y2VyX2tpbmQgPT0gMiB8fCB0aGlzLnByb3ZlbmFuY2UucHJvZHVjZXIuY3JlYXRvcl9wcmluY2lwYWxfaWQgIT0gJydKBAgDEARKBAgVEBZSCWF1dGhvcl9pZFIGcmVzdWx0Iq0HCgtPYmplY3RXcml0ZRIsCghnZW9tZXRyeRgBIAEoCzISLnF3aWJpLnYxLkdlb21ldHJ5Qga6SAPIAQESIwoIZmVhdHVyZXMYAiADKAsyES5xd2liaS52MS5GZWF0dXJlEisKCnByb3BlcnRpZXMYAyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0EhwKC29iamVjdF90eXBlGAQgASgJQge6SARyAhhAEhkKCGNhdGVnb3J5GAUgASgJQge6SARyAhhAEhAKCHByaW9yaXR5GAYgASgFEhoKDWlzX3NlbGVjdGFibGUYByABKAhIAIgBARIXCgppc192aXNpYmxlGAggASgISAGIAQESGAoFc3R5bGUYCSABKAlCCbpIBnIEGICAARJbCglwYXJlbnRfaWQYCiABKAlCSLpIRXJDMkFeJHxeWzAtOWEtZl17OH0tWzAtOWEtZl17NH0tWzAtOWEtZl17NH0tWzAtOWEtZl17NH0tWzAtOWEtZl17MTJ9JBIwCgNoaWQYCyABKAlCI7pIIMgBAXIbMhleW2EtejAtOV1bYS16MC05LV17MSw2Mn0kEhYKBG5hbWUYDCABKAlCCLpIBXIDGIACEhMKC3R0bF9zZWNvbmRzGA0gASgNEi8KCGF1ZGllbmNlGA8gASgOMhgucXdpYmkudjEuT2JqZWN0QXVkaWVuY2VIAogBARJiCgxhdWRpZW5jZV9pZHMYECADKAlCTLpISZIBRhAQIkJyQDI+XlswLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfSQSfQoObGF5ZXJfYmxvYl9pZHMYESADKAlCZbpIYpIBXxBAGAEiWXJXMlJeWzAtOWEtZl17OH0tWzAtOWEtZl17NH0tN1swLTlhLWZdezN9LVs4OWFiXVswLTlhLWZdezN9LVswLTlhLWZdezEyfS1bMC05YS1mXXszMn0kmAFFEj8KDmF1ZGllbmNlX3JvbGVzGBIgAygJQie6SCSSASEQEBgBIhtyGTIXXlthLXpdW2EtejAtOV8tXXswLDYzfSQSNwoKcmVjaXBpZW50cxgTIAMoCzIZLnF3aWJpLnYxLk9iamVjdFJlY2lwaWVudEIIukgFkgECEBBCEAoOX2lzX3NlbGVjdGFibGVCDQoLX2lzX3Zpc2libGVCCwoJX2F1ZGllbmNlSgQIDhAPUgZyZXN1bHQiOwoPT2JqZWN0UmVjaXBpZW50EiEKDWludm9jYXRpb25faWQYASABKAlCCLpIBXIDsAEBSABCBQoDd2hvKsABCg5PYmplY3RBdWRpZW5jZRIfChtPQkpFQ1RfQVVESUVOQ0VfVU5TUEVDSUZJRUQQABIaChZPQkpFQ1RfQVVESUVOQ0VfUFVCTElDEAESGgoWT0JKRUNUX0FVRElFTkNFX0FVVEhPUhACEhoKFk9CSkVDVF9BVURJRU5DRV9ESVJFQ1QQAxIYChRPQkpFQ1RfQVVESUVOQ0VfUk9MRRAEEh8KG09CSkVDVF9BVURJRU5DRV9NRU1CRVJfUk9MRRAFQjJaMGdpdGh1Yi5jb20vcXdpYmkvcXdpYmktcHJvdG8tZ28vcXdpYmkvdjE7cXdpYml2MWIGcHJvdG8z", [file_buf_validate_validate, file_qwibi_v1_common, file_qwibi_v1_geometry, file_qwibi_v1_provenance, file_google_protobuf_struct, file_google_protobuf_timestamp]);
 
 /**
  * Feature is one part of a GeoObject, modelled on a GeoJSON Feature: a geometry
@@ -228,7 +228,7 @@ export type GeoObject = Message<"qwibi.v1.GeoObject"> & {
   expiresAt?: Timestamp | undefined;
 
   /**
-   * State-plane checkpoint stamp of `geometry` for kind=position (ADR-0022):
+   * State-plane checkpoint stamp of `geometry` for kind=position:
    * the (owner_epoch, seq) pair the stored geometry was last flushed at. Clients
    * that subscribed with state_kinds seed their per-object position gate from
    * this value at snapshot/read time and then apply only strictly newer
@@ -247,7 +247,8 @@ export type GeoObject = Message<"qwibi.v1.GeoObject"> & {
   audience: ObjectAudience;
 
   /**
-   * Canonically sorted direct recipient account UUIDs. Server-owned.
+   * Canonically sorted recipient account UUIDs (DIRECT, or the members a
+   * MEMBER_ROLE object is addressed to). Server-owned.
    *
    * @generated from field: repeated string audience_ids = 24;
    */
@@ -266,6 +267,14 @@ export type GeoObject = Message<"qwibi.v1.GeoObject"> & {
    * @generated from field: repeated string layer_blob_ids = 26;
    */
   layerBlobIds: string[];
+
+  /**
+   * Canonically sorted member role ids of the App's release that may read a
+   * MEMBER_ROLE object. Empty for every other audience. Server-owned.
+   *
+   * @generated from field: repeated string audience_roles = 27;
+   */
+  audienceRoles: string[];
 };
 
 /**
@@ -392,6 +401,25 @@ export type ObjectWrite = Message<"qwibi.v1.ObjectWrite"> & {
    * @generated from field: repeated string layer_blob_ids = 17;
    */
   layerBlobIds: string[];
+
+  /**
+   * Member role ids of the App's current release that may read the object.
+   * Valid only with MEMBER_ROLE, in an App data container; immutable like the
+   * audience. The server normalizes their order.
+   *
+   * @generated from field: repeated string audience_roles = 18;
+   */
+  audienceRoles: string[];
+
+  /**
+   * The members a MEMBER_ROLE object is addressed to, named without an account
+   * id. Private App data only; the platform resolves each to a member and
+   * stores it in audience_ids, which an App never reads or writes. Every
+   * recipient that cannot be resolved is refused with one and the same error.
+   *
+   * @generated from field: repeated qwibi.v1.ObjectRecipient recipients = 19;
+   */
+  recipients: ObjectRecipient[];
 };
 
 /**
@@ -402,9 +430,38 @@ export const ObjectWriteSchema: GenMessage<ObjectWrite> = /*@__PURE__*/
   messageDesc(file_qwibi_v1_object, 2);
 
 /**
+ * ObjectRecipient names one member of a private App without an account id.
+ *
+ * @generated from message qwibi.v1.ObjectRecipient
+ */
+export type ObjectRecipient = Message<"qwibi.v1.ObjectRecipient"> & {
+  /**
+   * @generated from oneof qwibi.v1.ObjectRecipient.who
+   */
+  who: {
+    /**
+     * The member who made this invocation of the App, while its record is
+     * kept: 30 days for a contributing or managing call, until shortly after
+     * the deadline for an observing one.
+     *
+     * @generated from field: string invocation_id = 1;
+     */
+    value: string;
+    case: "invocationId";
+  } | { case: undefined; value?: undefined };
+};
+
+/**
+ * Describes the message qwibi.v1.ObjectRecipient.
+ * Use `create(ObjectRecipientSchema)` to create a new message.
+ */
+export const ObjectRecipientSchema: GenMessage<ObjectRecipient> = /*@__PURE__*/
+  messageDesc(file_qwibi_v1_object, 3);
+
+/**
  * ObjectAudience scopes one object inside an otherwise readable layer. Durable
  * private channels remain private layers; this field is for small, ephemeral
- * recipient sets in a shared layer (ADR-0017).
+ * recipient sets in a shared layer.
  *
  * @generated from enum qwibi.v1.ObjectAudience
  */
@@ -443,6 +500,15 @@ export enum ObjectAudience {
    * @generated from enum value: OBJECT_AUDIENCE_ROLE = 4;
    */
   ROLE = 4,
+
+  /**
+   * App data containers only: visible to the author (the App), the holders of
+   * the member roles named in audience_roles, and the members in audience_ids.
+   * A member role grants reading only. Layers refuse it; containers refuse ROLE.
+   *
+   * @generated from enum value: OBJECT_AUDIENCE_MEMBER_ROLE = 5;
+   */
+  MEMBER_ROLE = 5,
 }
 
 /**

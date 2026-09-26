@@ -179,7 +179,7 @@ describe("declarative point-set result model", () => {
     expect(result.alternatives[0]?.geometry).toEqual({ type: "MultiPoint", coordinates: [] });
   });
 
-  it("rejects more than the named ADR-0027 item cap", () => {
+  it("rejects more than the named item cap", () => {
     const coordinates = Array.from(
       { length: DECLARATIVE_RESULT_POINT_SET_MAX_ITEMS + 1 },
       (_, index) => [114 + index / 1000, 22],

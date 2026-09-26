@@ -1,6 +1,6 @@
 {
   "name": "@qwibi/sdk",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "TypeScript/browser client for the qwibi.v1 contract (Connect-Web). The web mirror of qwibi-go-sdk.",
   "license": "Apache-2.0",
   "repository": {

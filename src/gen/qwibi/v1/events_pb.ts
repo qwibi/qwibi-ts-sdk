@@ -492,7 +492,7 @@ export const AggregateUpdatedSchema: GenMessage<AggregateUpdated> = /*@__PURE__*
   messageDesc(file_qwibi_v1_events, 15);
 
 /**
- * StateEvent carries one state-plane cell update (ADR-0022 / INV-20): keyed
+ * StateEvent carries one state-plane cell update: keyed
  * last-write-wins state — movement first (kind="position", key = object uid).
  * State events are cursorless (ServerEvent.seq stays 0, no resume cursor) and
  * delivery-incomplete by contract: any intermediate tick may be superseded
@@ -510,7 +510,7 @@ export type StateEvent = Message<"qwibi.v1.StateEvent"> & {
 
   /**
    * State channel kind. v0: "position" (value = geometry). Semantics-free
-   * discriminator string per INV-7.
+   * discriminator string.
    *
    * @generated from field: string kind = 2;
    */
@@ -536,7 +536,7 @@ export type StateEvent = Message<"qwibi.v1.StateEvent"> & {
     case: "position";
   } | {
     /**
-     * Future kinds: opaque, size-capped payload (INV-7 extensibility seam).
+     * Future kinds: opaque, size-capped payload.
      *
      * @generated from field: bytes opaque = 5;
      */
@@ -953,7 +953,7 @@ export type ServerEvent = Message<"qwibi.v1.ServerEvent"> & {
     case: "layerDeleted";
   } | {
     /**
-     * State plane (ADR-0022): delivered only when the subscription opted in via
+     * State plane: delivered only when the subscription opted in via
      * SubscribeOptions.state_kinds. Cursorless (seq = 0, no cursor).
      *
      * @generated from field: qwibi.v1.StateEvent state_event = 23;

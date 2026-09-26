@@ -45,7 +45,7 @@ export interface DeclarativeResultSegment {
 }
 
 /**
- * ADR-0027 aligns this cap with the existing 64-item declarative parameter and
+ * This cap matches the existing 64-item declarative parameter and
  * object-reference bounds, limiting one map update and one card index.
  */
 export const DECLARATIVE_RESULT_POINT_SET_MAX_ITEMS = 64;

@@ -1,6 +1,6 @@
 import { Code, ConnectError } from "@connectrpc/connect";
-import type { ErrorDetail } from "./gen/qwibi/v1/common_pb.js";
 import { errorDetailFrom } from "./errors.js";
+import { retryAfterMsFrom } from "./retryAfter.js";
 
 /** Whether the failed unary RPC only read state or could mutate it. */
 export enum RetryOperation {
@@ -78,18 +78,4 @@ function retrySafeAfterTransportFailure(options: RetryOptions): boolean {
     options.mutationIdempotency === MutationIdempotency.HidUpsert ||
     options.mutationIdempotency === MutationIdempotency.VersionCas
   );
-}
-
-function retryAfterMsFrom(detail: ErrorDetail | undefined): number | undefined {
-  if (!detail) return undefined;
-  const message = detail.message.trim();
-  const bare = /^(\d+)\s*(?:s|sec(?:ond)?s?)?$/i.exec(message);
-  const labeled =
-    /(?:seconds[-_ ]until[-_ ]refill|retry[-_ ]after(?:[-_ ]seconds)?)\s*[:=]?\s*(\d+)/i.exec(
-      message,
-    );
-  const seconds = Number((bare ?? labeled)?.[1]);
-  if (!Number.isSafeInteger(seconds) || seconds < 0) return undefined;
-  const milliseconds = seconds * 1_000;
-  return Number.isSafeInteger(milliseconds) ? milliseconds : undefined;
 }

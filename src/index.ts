@@ -41,6 +41,7 @@ export * from "./livelayer.js";
 export * from "./state.js";
 export * from "./stream.js";
 export * from "./errors.js";
+export * from "./auth.js";
 export * from "./retry.js";
 export * from "./deadline.js";
 export * from "./transport.js";

@@ -1489,7 +1489,7 @@ export const QwibiService: GenService<{
 
 /**
  * AppInvocationService carries calls from people to Apps over one App-wide
- * connection (ADR-0032 decisions 7 and 8). A person's call names a Layer and an
+ * connection. A person's call names a Layer and an
  * App; the App receives only the allow-listed Invocation and never learns the
  * Layer, the installation or the person. Calls are admitted within small
  * per-person, per-Layer and per-App windows, served fairly across Layers, and
