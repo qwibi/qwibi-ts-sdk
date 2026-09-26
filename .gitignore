@@ -1,0 +1,16 @@
+# Dependencies & build output
+node_modules/
+dist/
+*.tsbuildinfo
+*.log
+
+# Local secret overrides — the dev .env is committed; secrets go in these (ignored).
+.env.local
+.env.*.local
+.env.production
+
+# Editor / OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store

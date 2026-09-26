@@ -1,0 +1,52 @@
+{
+  "name": "@qwibi/sdk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript/browser client for the qwibi.v1 contract (Connect-Web). The web mirror of qwibi-go-sdk.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qwibi/qwibi-ts-sdk.git"
+  },
+  "homepage": "https://github.com/qwibi/qwibi-ts-sdk#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "generate": "buf generate --include-imports",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.contract.json --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist src/gen",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "2.12.0",
+    "@connectrpc/connect": "^2.0.0",
+    "@connectrpc/connect-web": "^2.0.0"
+  },
+  "devDependencies": {
+    "@bufbuild/protoc-gen-es": "2.12.0",
+    "ajv": "^8.17.1",
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

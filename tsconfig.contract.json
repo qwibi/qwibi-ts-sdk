@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "."
+  },
+  "include": [
+    "src",
+    "test/public-contract.types.ts",
+    "examples/releaseDeclaration.ts"
+  ]
+}

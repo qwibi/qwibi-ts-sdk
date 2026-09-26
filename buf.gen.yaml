@@ -1,0 +1,11 @@
+version: v2
+# Generates protobuf-es v2 TypeScript (messages, enums, and service descriptors)
+# for the qwibi.v1 contract. Connect-Web builds clients directly from the service
+# descriptor, so no separate connect plugin is needed. Run via `pnpm generate`
+# (pnpm puts the local protoc-gen-es on PATH).
+plugins:
+  - local: protoc-gen-es
+    out: src/gen
+    opt:
+      - target=ts
+      - import_extension=js

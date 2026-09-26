@@ -1,0 +1,114 @@
+# @qwibi/sdk
+
+TypeScript/browser client for the `qwibi.v1` contract — the web mirror of
+`qwibi-go-sdk`. Types and the service descriptor are generated from the proto
+with protobuf-es v2; clients are built with Connect-Web.
+
+```ts
+import { createQwibiClient } from "@qwibi/sdk";
+
+const qwibi = createQwibiClient({ baseUrl: "http://localhost:7903" });
+const res = await qwibi.authenticate({
+  credential: { method: { case: "anonymous", value: { deviceId: "web-demo" } } },
+});
+```
+
+The gateway exposes the browser **gRPC-Web edge** on `:7903`; api-server `:7901` is
+health/metrics HTTP only. Unary RPCs and server-streaming (`StreamLayer` — the live-layer
+subscription) are supported; only bidirectional `Subscribe` is unavailable over gRPC-Web.
+
+## Installations and releases
+
+An App's process never lists, follows or acknowledges installations
+([ADR-0032](../qwibi-docs/adr/0032-installation-blind-app-delivery.md)). Publishing a release makes it
+current in every installation at once; there is no pending release, readiness report or promotion,
+and only the features that need a newly added sensitive right wait for each person's consent
+([PRODUCT §3.4](../qwibi-docs/PRODUCT.md#34-apprelease), [§9.4](../qwibi-docs/PRODUCT.md#94-installation)).
+`createQwibiInstallationClient` serves the people who add Apps to Layers and remove them.
+
+The generated client exposes one-call installation and a person's per-right consent operation.
+
+## L1 object helpers
+
+The SDK constructs ordinary generated `ObjectWrite` messages for the five L1
+application helpers. They use validated geometry, set the helper's `object_type`,
+and serialize only a style supplied by the caller.
+
+```ts
+import { marker } from "@qwibi/sdk";
+
+const object = marker(114.16, 22.28, { hid: "pier-marker", name: "Pier" });
+await qwibi.postObject({ layerId, object });
+```
+
+`marker`, `message`, `track`, `zone`, and `route` add no client abstraction and
+no wire surface. `qstyle` accepts only the style-v0 keys and rejects invalid
+numbers/schema tags before a request is sent. Applications remain free to use
+any other `object_type` directly on an `ObjectWrite`.
+
+## Client conformance
+
+Any consumer of the live stream (`StreamLayer`) must follow the QTProtocol
+client-conformance rules (`qwibi-docs/design/qtprotocol-spec.md` §6.1):
+
+1. **`SLOW_CONSUMER` ⇒ drop the cursor, re-open.** The server dropped deltas under
+   backpressure — the view is stale. Discard the resume cursor and re-open the
+   subscription **without** one, so a fresh Snapshot rebuilds the state.
+2. **Per-object version gating.** Track the last applied `version` per object id
+   (snapshot objects included) and drop any object event whose `version` is ≤ it.
+   `version` is the per-OBJECT mutation counter (independent of the per-layer
+   delivery `seq`); a delete carries the object's next version, so its tombstone
+   supersedes any late delta for that object.
+3. **`RESUME_TOKEN_EXPIRED` ⇒ same as rule 1.**
+4. **`LayerDeleted` ⇒ drop the layer's state**; never auto-resubscribe with a cursor.
+
+The SDK ships the managed `LiveLayer` wrapper for cursor resume, reconnect/backoff,
+reset handling and per-object replay de-duplication:
+
+```ts
+import { LiveLayer, createStreamSource } from "@qwibi/sdk";
+
+const live = new LiveLayer(createStreamSource(qwibi), {
+  layerIds: [layerId],
+  viewport,
+});
+live.on("snapshot", applySnapshot);
+live.on("updated", applyObject);
+live.on("deleted", applyDelete);
+live.start();
+```
+
+`isSlowConsumer` and `shouldResetCursor` remain exported for lower-level callers that intentionally
+manage the raw stream themselves.
+
+State-enabled streams add the QTP §6.3 rules. Request
+`stateKinds: ["position"]`, feed snapshots and state/delete events through one
+bounded `StateGate`, and render only callbacks that pass its lexicographic pair
+and ledger-tombstone checks. `hydrateStateObject` converts a targeted
+`GetObject` NotFound into a remembered drop. For publishing, keep one
+`PositionWriterSession` per logical tab/device writer and reuse the prepared
+frame on transport retry; it supplies the stable `writer_id` and per-key
+`client_seq` required by `PublishBatch`.
+
+```ts
+const gate = new StateGate();
+gate.applyServerEvent(event, {
+  onStateEvent: applyPosition,
+  onStateClear: clearPosition,
+  onObjectDeleted: removeObject,
+});
+
+const writer = new PositionWriterSession();
+const frame = writer.prepareFrame(layerId, [{ key: objectId, position }]);
+await writer.publishPrepared(createStreamIngressClient({ baseUrl, token }), frame);
+```
+
+## Develop
+
+```sh
+pnpm install            # from the repo root (pnpm workspace)
+pnpm --filter @qwibi/sdk generate   # regenerate proto bindings
+pnpm --filter @qwibi/sdk build      # tsc -> dist
+```
+
+Regenerate `src/gen` after any change to `qwibi-api-proto`.
