@@ -1,7 +1,6 @@
 {
   "name": "@qwibi/sdk",
   "version": "1.0.0",
-  "private": true,
   "description": "TypeScript/browser client for the qwibi.v1 contract (Connect-Web). The web mirror of qwibi-go-sdk.",
   "license": "Apache-2.0",
   "repository": {
@@ -33,7 +32,7 @@
     "typecheck": "tsc -p tsconfig.contract.json --noEmit",
     "test": "vitest run",
     "clean": "rm -rf dist src/gen",
-    "prepack": "pnpm run build"
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@bufbuild/protobuf": "2.12.0",

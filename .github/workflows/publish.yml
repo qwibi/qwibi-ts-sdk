@@ -1,0 +1,39 @@
+# Publishes @qwibi/sdk to npmjs when a tag v<version> is pushed.
+# Authentication is npm trusted publishing (OIDC): no NPM_TOKEN secret exists.
+# The npm trusted publisher for @qwibi/sdk names this repository and this file.
+name: publish
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      # Trusted publishing needs npm 11.5.1 or newer.
+      - run: npm install -g npm@^11.5.1
+      - name: Tag matches package.json version
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          test "v$version" = "$GITHUB_REF_NAME" || { echo "tag $GITHUB_REF_NAME != v$version"; exit 1; }
+          if [ "$(npm view "@qwibi/sdk@$version" version 2>/dev/null)" = "$version" ]; then
+            echo "@qwibi/sdk@$version is already on npm; nothing to publish"
+            echo "PUBLISHED=1" >> "$GITHUB_ENV"
+          fi
+      - if: env.PUBLISHED != '1'
+        run: npm install --no-package-lock --no-audit --no-fund
+      - if: env.PUBLISHED != '1'
+        run: npm run typecheck
+      # prepack builds dist.
+      - if: env.PUBLISHED != '1'
+        run: npm publish --provenance --access public
